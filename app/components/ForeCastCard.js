@@ -1,7 +1,7 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import {getDayfromDate} from '../utils';
-import {Sizes} from '../utils/CommonStyles';
+import {Colors, Sizes} from '../utils/CommonStyles';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 const ForeCastCard = props => {
@@ -15,7 +15,7 @@ const ForeCastCard = props => {
     <View style={styles.card}>
       <Text style={styles.dayText}>{day}</Text>
       <View style={styles.statusBox}>
-        <Icon name="partly-sunny" size={20} color={'#FF6666'} />
+        <Icon name="partly-sunny" size={20} color={Colors.orange} />
         <Text style={styles.statusText}>{status}</Text>
       </View>
       <View style={styles.tempBox}>
@@ -36,12 +36,12 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-around',
-    backgroundColor: '#DEEBEE',
+    backgroundColor: Colors.cardBg,
     marginBottom: 16,
   },
   dayText: {
     fontSize: Sizes.big,
-    color: '#333333',
+    color: Colors.lightblack,
   },
   statusBox: {
     flexDirection: 'row',

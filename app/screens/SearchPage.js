@@ -11,7 +11,7 @@ import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {fetchCities} from '../store/actions';
 import Icon from 'react-native-vector-icons/Ionicons';
-import {Sizes} from '../utils/CommonStyles';
+import {Colors, Sizes} from '../utils/CommonStyles';
 
 const SearchPage = props => {
   const dispatch = useDispatch();
@@ -107,7 +107,7 @@ const SearchPage = props => {
     <View style={styles.container}>
       <View style={styles.header}>
         <TouchableOpacity activeOpacity={0.8} onPress={() => onClose()}>
-          <Icon name="close" size={30} color={'#000000'} />
+          <Icon name="close" size={30} color={Colors.black} />
         </TouchableOpacity>
       </View>
       {!selectedCountry ? (
@@ -181,7 +181,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     padding: 35,
     alignItems: 'center',
-    shadowColor: '#000',
+    shadowColor: Colors.black,
     shadowOffset: {
       width: 0,
       height: 2,
@@ -196,7 +196,7 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     paddingLeft: 10,
     borderWidth: 1,
-    borderColor: '#BBBBBB',
+    borderColor: Colors.secondaryblack,
   },
   listContainer: {
     flex: 1,
@@ -205,13 +205,13 @@ const styles = StyleSheet.create({
   listTitle: {
     fontSize: Sizes.large,
     fontWeight: '600',
-    color: 'grey',
+    color: Colors.grey,
     marginBottom: Sizes.tiny,
   },
   countryTab: {
     paddingVertical: 10,
     borderBottomWidth: 1,
-    borderColor: 'lightgrey',
+    borderColor: Colors.lightGrey,
     alignItems: 'flex-start',
     justifyContent: 'center',
   },
@@ -223,7 +223,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     paddingVertical: Sizes.small,
-    backgroundColor: 'lightgrey',
+    backgroundColor: Colors.lightGrey,
     paddingHorizontal: 4,
     borderRadius: 4,
   },

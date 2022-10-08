@@ -2,6 +2,14 @@ import {StyleSheet} from 'react-native';
 
 const Colors = {
   white: '#FFFFFF',
+  black: '#000000',
+  lightblack: '#333333',
+  orange: '#FF6666',
+  grey: 'grey',
+  lightGrey: 'lightgrey',
+  cardBg: '#DEEBEE',
+  secondaryblack: '#CCCCC',
+  textLight: '#0366A1',
 };
 
 const Sizes = {

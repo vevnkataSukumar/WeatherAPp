@@ -1,6 +1,6 @@
 import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import React from 'react';
-import {Sizes} from '../utils/CommonStyles';
+import {Colors, Sizes} from '../utils/CommonStyles';
 
 const SearchBox = props => {
   const {onBoxClick, selectedCity} = props;
@@ -30,17 +30,17 @@ const styles = StyleSheet.create({
     alignSelf: 'stretch',
   },
   searchBy: {
-    color: '#FFF',
+    color: Colors.white,
     fontSize: 12,
     marginRight: 10,
   },
   initialText: {
-    color: '#CCC',
+    color: Colors.secondaryblack,
     fontSize: 18,
     marginRight: 10,
   },
   selectedInitialText: {
-    color: '#FFF',
+    color: Colors.white,
     fontSize: 18,
     marginRight: 10,
   },
@@ -54,10 +54,10 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     paddingLeft: 10,
     justifyContent: 'center',
-    backgroundColor: '#FFFFFF',
+    backgroundColor: Colors.white,
   },
   placeholdettext: {
-    color: 'grey',
+    color: Colors.grey,
   },
   searchBtn: {
     height: 50,
@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
   },
   searchText: {
     fontSize: Sizes.large,
-    color: '#0366A1',
+    color: Colors.textLight,
     fontWeight: '600',
   },
 });
