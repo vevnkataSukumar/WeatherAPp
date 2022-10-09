@@ -233,7 +233,9 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start',
     justifyContent: 'center',
   },
-  countryText: {},
+  countryText: {
+    fontSize: Sizes.large,
+  },
   selectedCountryContainer: {
     alignSelf: 'stretch',
     flexDirection: 'row',
