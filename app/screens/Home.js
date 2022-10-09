@@ -12,7 +12,7 @@ import {
 import {
   fetchCountries,
   fetchUserLocation,
-  fetchUserLocationWeatherData,
+  fetchUserLocationForecastWeatherData,
 } from '../store/actions';
 import {DEFAULT_LAG, DEFAULT_LAT} from '../constants';
 import SearchPage from './SearchPage';
@@ -47,7 +47,7 @@ const Home = ({navigation}) => {
   const handleCurrentWeatherDataFetch = (lat, lag) => {
     const locationLat = lat || DEFAULT_LAT;
     const locationLag = lag || DEFAULT_LAG;
-    dispatch(fetchUserLocationWeatherData(locationLat, locationLag));
+    dispatch(fetchUserLocationForecastWeatherData(locationLat, locationLag));
   };
 
   function handleOnSelectCity(city) {
@@ -99,25 +99,3 @@ const styles = StyleSheet.create({
     paddingBottom: 20,
   },
 });
-
-// const [searchType, setSearchType] = useState(null);
-// const [searchByVal, setSearchByValue] = useState(null);
-
-// const handleSearchByCityOrPostalCode = searchVal => {
-//   dispatch(fetchUserLocationWeatherDataByCity(searchByVal));
-// };
-
-// function handleSearchTypeChange(val) {
-//   setSearchType(val);
-// }
-
-// function handleSearchClick(val) {
-//   setSearchByValue(val);
-//   setLoader(true);
-//   if (searchType && val) {
-//     funcDebounce(handleSearchByCityOrPostalCode(val), 300);
-//   }
-//   setTimeout(() => {
-//     setLoader(false);
-//   }, 2000);
-// }

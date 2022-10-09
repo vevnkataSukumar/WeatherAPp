@@ -4,7 +4,6 @@ import {
   citiesReducer as cities,
   countriesReducer as countries,
   userLocationReducer as userLocation,
-  currentLocationWeatherDataReducer as currentLocationWeatherData,
   currentLocationForecastWeatherDataReducer as currentLocationForecastData,
 } from './utils';
 
@@ -13,7 +12,6 @@ const appReducer = combineReducers({
   cities,
   countries,
   userLocation,
-  currentLocationWeatherData,
   currentLocationForecastData,
 });
 const rootReducer = (state, action) => {

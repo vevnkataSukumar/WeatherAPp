@@ -103,10 +103,24 @@ const SearchPage = props => {
     dispatch(fetchCities(country?.isoCode));
   };
 
+  const NoDataContainer = ({message}) => {
+    return (
+      <View style={styles.noDataContainer}>
+        <Icon name="ios-sad-outline" size={100} color={Colors.grey} />
+        <Text style={styles.noDataText}>{message}</Text>
+      </View>
+    );
+  };
+
+  const handleClose = () => {
+    setToInitialState();
+    onClose();
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <TouchableOpacity activeOpacity={0.8} onPress={() => onClose()}>
+        <TouchableOpacity activeOpacity={0.8} onPress={() => handleClose()}>
           <Icon name="close" size={30} color={Colors.black} />
         </TouchableOpacity>
       </View>
@@ -136,7 +150,9 @@ const SearchPage = props => {
           <Text style={styles.listTitle}>Countries: </Text>
           <FlatList data={filteredCountries} renderItem={renderCountryTab} />
         </View>
-      ) : undefined}
+      ) : (
+        !selectedCountry && <NoDataContainer message={'No countries found!'} />
+      )}
 
       {selectedCountry && citiesData && citiesData?.length > 0 ? (
         <View>
@@ -147,7 +163,9 @@ const SearchPage = props => {
             onChangeText={handleCityInput}
           />
         </View>
-      ) : undefined}
+      ) : (
+        selectedCountry && <NoDataContainer message={'No cities found!'} />
+      )}
 
       {selectedCountry && filteredCities && filteredCities?.length > 0 ? (
         <View style={styles.listContainer}>
@@ -216,7 +234,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   countryText: {},
-
   selectedCountryContainer: {
     alignSelf: 'stretch',
     flexDirection: 'row',
@@ -230,5 +247,18 @@ const styles = StyleSheet.create({
   selectedCountryText: {
     fontSize: Sizes.large,
     fontWeight: '600',
+  },
+  noDataContainer: {
+    alignSelf: 'stretch',
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingTop: 80,
+  },
+  noDataText: {
+    color: Colors.lightblack,
+    fontWeight: '600',
+    letterSpacing: 0.2,
+    marginTop: Sizes.tiny,
+    fontSize: Sizes.large,
   },
 });

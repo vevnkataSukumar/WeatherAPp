@@ -8,13 +8,10 @@ import {
   IS_LOADING_USER_LOCATION,
   SET_USER_LOCATION,
   REMOVE_USER_LOCATION,
-  IS_LOADING_CURENT_LOCATION_WEATHER_DATA,
-  SET_CURENT_LOCATION_WEATHER_DATA,
-  CLEAR_CURENT_LOCATION_WEATHER_DATA,
   IS_LOADING_CURENT_LOCATION_FORECAST_DATA,
   SET_CURENT_LOCATION_FORECAST_DATA,
   CLEAR_CURENT_LOCATION_FORECAST_DATA,
-} from '../actions';
+} from '../actions/types';
 
 const InitialState = {
   data: [],
@@ -84,33 +81,6 @@ export const userLocationReducer = (state = InitialState, action) => {
         isLoading: false,
       };
     case REMOVE_USER_LOCATION:
-      return {
-        ...state,
-        data: [],
-        isLoading: false,
-      };
-    default:
-      return state;
-  }
-};
-
-export const currentLocationWeatherDataReducer = (
-  state = InitialState,
-  action,
-) => {
-  switch (action.type) {
-    case IS_LOADING_CURENT_LOCATION_WEATHER_DATA:
-      return {
-        ...state,
-        isLoading: action.payload,
-      };
-    case SET_CURENT_LOCATION_WEATHER_DATA:
-      return {
-        ...state,
-        data: action.payload,
-        isLoading: false,
-      };
-    case CLEAR_CURENT_LOCATION_WEATHER_DATA:
       return {
         ...state,
         data: [],

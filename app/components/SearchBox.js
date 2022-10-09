@@ -5,7 +5,7 @@ import {Colors, Sizes} from '../utils/CommonStyles';
 const SearchBox = props => {
   const {onBoxClick, selectedCity} = props;
 
-  const City = selectedCity || 'Search by City / Postal Code';
+  const City = selectedCity || 'Search by City';
   return (
     <View style={styles.container}>
       <TouchableOpacity onPress={() => onBoxClick()} style={styles.inputBox}>
@@ -76,64 +76,3 @@ const styles = StyleSheet.create({
     fontWeight: '600',
   },
 });
-
-// const [inputValue, setInputValue] = useState('');
-// const [searchType, setSearchType] = useState('city');
-
-// const handleInput = val => {
-//   setInputValue(val);
-// };
-
-// useEffect(() => {
-//   onChangeSearchType(searchType);
-// }, []);
-
-// const handleSearchType = val => {
-//   setSearchType(val);
-//   if (onChangeSearchType) {
-//     onChangeSearchType(val);
-//   }
-// };
-
-// const handleSearchClick = () => {
-//   onBoxClick();
-// if (onSearchClicked) {
-//   onSearchClicked(inputValue);
-// }
-// };
-
-// {/* <View style={styles.searchBox}>
-//   <Text style={styles.searchBy}>Search By: </Text>
-//   <View style={styles.searchBox}>
-//     {SearchTypes?.map(el => (
-//       <Text
-//         style={
-//           el.key === searchType
-//             ? styles.selectedInitialText
-//             : styles.initialText
-//         }
-//         onPress={() => handleSearchType(el.key)}>
-//         {el?.name}
-//       </Text>
-//     ))}
-//   </View>
-// </View> */}
-// import {SearchTypes} from '../utils';
-
-// {
-//   /* <TextInput
-//           style={styles.inputContainer}
-//           placeholder={'Search by City / Postal Code'}
-//           value={inputValue}
-//           onChangeText={handleInput}
-//         /> */
-// }
-// {
-//   /* {inputValue && inputValue?.length > 3 ? (
-//           <TouchableOpacity
-//             style={styles.searchBtn}
-//             onPress={handleSearchClick}>
-//             <Text style={styles.searchText}>Search</Text>
-//           </TouchableOpacity>
-//         ) : undefined} */
-// }
